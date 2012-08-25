@@ -297,8 +297,8 @@ package org.flixel
 				else
 				{
 					var edge:Number;
-					var targetX:Number = target.x + ((target.x > 0)?0.0000001:-0.0000001);
-					var targetY:Number = target.y + ((target.y > 0)?0.0000001:-0.0000001);
+					var targetX:Number = FlxU.ceil(target.x + ((target.x > 0)?0.0000001:-0.0000001));
+					var targetY:Number = FlxU.ceil(target.y + ((target.y > 0)?0.0000001:-0.0000001));
 					
 					edge = targetX - deadzone.x;
 					if(scroll.x > edge)

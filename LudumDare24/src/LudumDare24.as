@@ -1,9 +1,14 @@
 package {
-	import flash.display.Sprite;
+	import org.flixel.*;
+	import org.ll.states.*;
 	
-	public class LudumDare24 extends Sprite {
+	[SWF(width="1024", height="768", backgroundColor="#000000")]
+	[Frame(factoryClass="Preloader")]
+	
+	public class LudumDare24 extends FlxGame {
 		public function LudumDare24() {
-			
+			super(512, 384, LogoState, 2, 60, 60, true);
+			this.forceDebugger = true;
 		}
 	}
 }
