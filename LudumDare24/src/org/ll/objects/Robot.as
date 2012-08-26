@@ -12,7 +12,6 @@ package org.ll.objects {
 	
 	public class Robot extends FlxSprite {
 		
-		public var _healthPoints:int = 100;
 		public var _exp:int = 0;
 		public var _jumpPower:int;
 		
@@ -29,9 +28,9 @@ package org.ll.objects {
 		
 		public function Robot(X:Number, Y:Number) {
 			super(X,Y);
-			this.loadGraphic(AssetDirectory.ImgPlayer, true, true, 15, 12, false);
+			this.health = 100;
+			this.loadGraphic(AssetDirectory.ImgPlayer, true, true, 14, 12, false);
 			this.addAnimation("Idle", ["0"], 0, false);
-			this.addAnimation("Shoot", ["0", "1", "2", "0"], 8, true);
 			this.play("Idle");
 			this.facing = RIGHT;
 			this.maxVelocity.x = 100;			
@@ -91,8 +90,20 @@ package org.ll.objects {
 				_isTouchingGround = false;
 			}
 			
+			if (FlxG.keys.justPressed("M")) {
+				hurtHP(5);
+			}
+			
 			
 			super.update();
+		}
+		
+		public function hurtHP(by:Number):void {
+			if (this.alive) {
+				this.flicker(0.3);
+				this.hurt(by);
+				FlxG.log("HP:" + this.health);
+			}
 		}
 	}
 }

@@ -20,7 +20,7 @@ package org.ll.states {
 		}
 		
 		public function whenFadeIsDone():void {
-			FlxG.switchState(new DebugState);
+			FlxG.switchState(new MenuState);
 		}
 		
 		override public function update():void {

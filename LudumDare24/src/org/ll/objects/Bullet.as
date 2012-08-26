@@ -40,6 +40,11 @@ package org.ll.objects {
 		
 		override public function update():void {
 			acceleration.x = 0;
+			
+			if (justTouched(WALL)) {
+				this.kill();
+			}
+			
 			if (_direction == 1) {
 				this.x -= 10;
 			}

@@ -7,7 +7,7 @@ package {
 	
 	public class LudumDare24 extends FlxGame {
 		public function LudumDare24() {
-			super(512, 384, LogoState, 2, 60, 60, true);
+			super(512, 384, DebugState, 2, 60, 60, true);
 			this.forceDebugger = true;
 		}
 	}
