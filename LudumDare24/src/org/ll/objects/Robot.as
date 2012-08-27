@@ -14,7 +14,7 @@ package org.ll.objects {
 	public class Robot extends FlxSprite {
 		
 		public var _exp:Number = 0;
-		public var _level:Number = 30;
+		public var _level:Number = 0;
 		
 		public var _jumpPower:Number = 0.50;
 		public var _runSpeed:int = 100;
