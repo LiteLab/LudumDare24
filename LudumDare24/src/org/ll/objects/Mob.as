@@ -152,6 +152,10 @@ package org.ll.objects {
 				this.health = 650;
 			}
 			
+			if (_isBoss && Global._playerBot._level >= 40) {
+				this.health = 1000;
+			}
+			
 			//if (_type == 1) {
 			_emitter = new FlxEmitter(0,0,5);
 			_emitter.makeParticles(AssetDirectory.ImgGibs1, 5, 16, false, 0.8); 
