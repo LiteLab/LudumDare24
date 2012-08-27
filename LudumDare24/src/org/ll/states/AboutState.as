@@ -7,6 +7,7 @@ package org.ll.states {
 	public class AboutState extends FlxState {
 		override public function create():void {
 			FlxG.flash(0xff000000,1);
+			FlxG.bgColor = 0xff000000;
 			var msg:FlxSprite = new FlxSprite(3, 5);
 			msg.loadGraphic(AssetDirectory.ImgAboutMsg,false,false, 384, 141);
 			add(msg);

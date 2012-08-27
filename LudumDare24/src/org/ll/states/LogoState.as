@@ -14,6 +14,7 @@ package org.ll.states {
 		
 		override public function create():void {
 			FlxG.flash(0xff000000, 1);
+			FlxG.bgColor = 0xff000000;
 			_fadeTimer.start(1.5, 1);
 			add(_logo);
 			Actuate.tween(_logo, 1, { y:156 } ).ease (Elastic.easeOut);

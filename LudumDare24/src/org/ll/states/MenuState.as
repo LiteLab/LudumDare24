@@ -16,6 +16,7 @@ package org.ll.states {
 		
 		override public function create():void {
 			FlxG.flash(0x000000, 1);
+			FlxG.bgColor = 0xff000000;
 			
 			_cursor.loadGraphic(AssetDirectory.ImgBotCursor, false, false, 10, 10, false);
 			_cursor.x = 218;
@@ -63,6 +64,11 @@ package org.ll.states {
 				_cursor.y = 227;
 			}
 			
+			if (FlxG.keys.justPressed("SPACE") && _cursorSpot == 1) {
+				FlxG.fade(0xff000000, 1, fadeSwitchGame);
+				
+			}
+			
 			if (FlxG.keys.justPressed("SPACE") && _cursorSpot == 2) {
 				FlxG.fade(0xff000000, 1, fadeSwitchAbout);
 				
@@ -74,6 +80,10 @@ package org.ll.states {
 		
 		public function fadeSwitchAbout():void {
 			FlxG.switchState(new AboutState);
+		}
+		
+		public function fadeSwitchGame():void {
+			FlxG.switchState(new DebugState);
 		}
 	}
 }
